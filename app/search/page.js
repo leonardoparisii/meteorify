@@ -1,7 +1,7 @@
 'use client'
 import axios from 'axios'
-import { useState } from 'react'
-import Wheater from './[name]/page'
+import { useEffect, useState } from 'react'
+import Wheater from '@/app/search/[name]/page.jsx'
 import SearchBar from '@/components/shared/SeachBar'
 
 export default function Home() {
@@ -11,7 +11,10 @@ export default function Home() {
 
   const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=946327b2580d1f056bbef0a6e3d1c05a`
 
-  const fetchWeather = async () => {
+  const fetchWeather = async (event) => {
+    if (event) {
+        event.preventDefault()
+    }
     setLoading(true)
     try {
       const response = await axios.get(api)
@@ -23,7 +26,11 @@ export default function Home() {
     setCity('')
     setLoading(false)
   }
-  console.log(city)
+  useEffect(() => {
+    if (city !== '') fetchWeather()
+  }, [city])
+
+console.log(city)
   return (
     <div>
       <div className='w-full m-auto max-w-[500px]'>

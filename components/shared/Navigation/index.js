@@ -7,7 +7,7 @@ function Navigation() {
   return (
     <div className='grid grid-cols-3 p-4  sm:p-6 select-none bg-transparent backdrop-blur-md font-satoshi'>
       <Link href='/'>
-        <span className='text-2xl'>Meteo</span>
+        <span className='text-3xl font-extrabold'>Meteorify</span>
       </Link>
       <div className='flex gap-4 justify-center items-center'>
         {data.items.map((item, index) => (
