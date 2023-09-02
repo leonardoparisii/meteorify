@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import Navigation from '../components/shared/Navigation'
 import Image from 'next/image';
-import Bg from './Bg.svg'
 
 export const metadata = {
   title: 'Wheater-App Project',
