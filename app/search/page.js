@@ -9,7 +9,7 @@ export default function Home() {
   const [wheater, setWheater] = useState({})
   const [loading, setLoading] = useState(false)
 
-  const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.APP_ID}`
+  const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=946327b2580d1f056bbef0a6e3d1c05a`
 
   const fetchWeather = async (event) => {
     if (event) {
